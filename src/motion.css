@@ -1,0 +1,18 @@
+:root{--motion-ease-out:cubic-bezier(.23,1,.32,1)}
+
+/* Native hints can light-dismiss without an interceptable close request.
+   Keep them in the top layer during the fade where supported; older engines
+   still dismiss instantly. GSAP owns the other surfaces' explicit lifecycles. */
+.ui-tooltip{
+  opacity:0;
+  transition-property:opacity,display,overlay;
+  transition-duration:.125s;
+  transition-timing-function:var(--motion-ease-out);
+  transition-behavior:allow-discrete;
+}
+.ui-tooltip:is(:popover-open,.\:popover-open){opacity:1}
+@starting-style{
+  .ui-tooltip:is(:popover-open,.\:popover-open){opacity:0}
+}
+:is([interestfor],[popovertarget]):focus-visible + .ui-tooltip{transition-duration:0s}
+@media(prefers-reduced-motion:reduce){.ui-tooltip{transition-duration:.1s}}

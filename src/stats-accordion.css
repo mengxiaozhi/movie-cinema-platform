@@ -1,0 +1,82 @@
+.stats-accordion{
+  --stats-ink:var(--page-ink,#173d33);
+  --stats-muted:var(--page-muted,#59665e);
+  --stats-line:var(--page-line,#d6cbb9);
+  color-scheme:light;
+  color:var(--stats-ink);
+  background:var(--page-paper,#fffefa);
+  border:1px solid var(--stats-line);
+  border-radius:8px;
+  margin-block:22px;
+  min-inline-size:0;
+}
+.stats-accordion-item+.stats-accordion-item{border-block-start:1px solid var(--stats-line)}
+.stats-accordion-trigger{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-block-size:76px;
+  padding:16px 18px;
+  list-style:none;
+  cursor:pointer;
+  line-height:1.5;
+}
+.stats-accordion-trigger::-webkit-details-marker{display:none}
+.stats-accordion-trigger::marker{content:''}
+.stats-accordion-item:first-child>.stats-accordion-trigger{border-start-start-radius:7px;border-start-end-radius:7px}
+.stats-accordion-item:last-child:not([open])>.stats-accordion-trigger{border-end-start-radius:7px;border-end-end-radius:7px}
+.stats-accordion-trigger:hover{background:#173d3308}
+.stats-accordion-trigger:focus-visible{outline:3px solid var(--stats-ink);outline-offset:-4px}
+.stats-accordion-chevron{flex:none;rotate:-90deg}
+.stats-accordion-trigger:dir(rtl) .stats-accordion-chevron{rotate:90deg}
+.stats-accordion-item[open]>.stats-accordion-trigger .stats-accordion-chevron{rotate:0deg}
+.stats-accordion-label{flex:1;min-inline-size:0;font-size:16px;font-weight:600;overflow-wrap:anywhere}
+.stats-accordion-value{max-inline-size:55%;font-size:30px;font-weight:650;line-height:1.25;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.stats-accordion-value small,.stats-accordion-breakdown small{font-size:13px;font-weight:400;color:var(--stats-muted);margin-inline-start:7px}
+.stats-accordion-content{min-block-size:0;overflow:hidden}
+.stats-accordion-body{padding-block:0 20px;padding-inline:48px 18px;overflow-wrap:anywhere}
+.stats-accordion-body>p{color:var(--stats-muted);font-size:15px;line-height:1.8;margin:0}
+.stats-accordion-breakdown{display:grid;gap:0;margin:14px 0 0;padding:0;border-block-start:1px solid var(--stats-line)}
+.stats-accordion-breakdown>div{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-block:10px;border-block-end:1px solid var(--stats-line)}
+.stats-accordion-breakdown dt{min-inline-size:0;color:var(--stats-muted);font-size:14px}
+.stats-accordion-breakdown dd{margin:0;font-size:16px;font-weight:600;font-variant-numeric:tabular-nums;text-align:end}
+.stats-accordion-extra{margin-block-start:14px;font-size:15px;line-height:1.8}
+.stats-accordion-extra a{color:var(--stats-ink);text-decoration:underline;text-underline-offset:4px}
+.stats-accordion-extra a:focus-visible{outline:3px solid var(--stats-ink);outline-offset:3px}
+
+/* Grid tracks animate natural height in browsers without interpolate-size. */
+.stats-accordion-item::details-content{
+  display:grid;
+  grid-template-rows:0fr;
+  overflow:clip;
+  contain:layout;
+}
+.stats-accordion-item[open]::details-content{grid-template-rows:1fr}
+@supports(interpolate-size:allow-keywords){
+  .stats-accordion-item::details-content{display:block;interpolate-size:allow-keywords;block-size:0}
+  .stats-accordion-item[open]::details-content{block-size:auto}
+}
+@media(prefers-reduced-motion:no-preference){
+  .stats-accordion-item::details-content{
+    transition-property:grid-template-rows,content-visibility;
+    transition-duration:280ms;
+    transition-timing-function:cubic-bezier(.22,1,.36,1);
+    transition-behavior:allow-discrete;
+  }
+  .stats-accordion-chevron{transition:rotate 200ms ease}
+  .stats-accordion-trigger{transition:background-color 160ms ease}
+  @supports(interpolate-size:allow-keywords){
+    .stats-accordion-item::details-content{transition-property:block-size,content-visibility}
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .stats-accordion-item::details-content,.stats-accordion-chevron,.stats-accordion-trigger{transition:none}
+}
+@media(max-width:420px){
+  .stats-accordion-trigger{gap:9px;padding-inline:12px}
+  .stats-accordion-value{font-size:27px}
+  .stats-accordion-body{padding-inline:39px 12px}
+}
+@media(forced-colors:active){
+  .stats-accordion,.stats-accordion-item+.stats-accordion-item,.stats-accordion-breakdown,.stats-accordion-breakdown>div{border-color:CanvasText}
+}

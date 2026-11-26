@@ -1,0 +1,17 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /materials/{uid}/{orderId}/{fileId} {
+      // Review/download uses short-lived URLs issued after server authorization.
+      allow read, update, delete: if false;
+      allow create: if request.auth != null && request.auth.uid == uid
+        && fileId.matches('[a-f0-9-]+')
+        && request.resource.size > 0 && request.resource.size <= 524288000
+        && request.resource.contentType.matches('video/(mp4|quicktime)')
+        && firestore.get(/databases/(default)/documents/orders/$(orderId)).data.ownerId == uid
+        && firestore.get(/databases/(default)/documents/orders/$(orderId)).data.status == 'APPROVED'
+        && firestore.get(/databases/(default)/documents/orders/$(orderId)).data.qcStatus != 'QC_PASS';
+    }
+    match /{path=**} { allow read, write: if false; }
+  }
+}

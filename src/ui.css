@@ -1,0 +1,71 @@
+/* Readable type sizes without enlarging the cinematic first screen. */
+:root{font-size:16px}
+button,input,select,textarea{font-size:16px}
+.topbar .brand{font-family:system-ui,'Noto Sans TC',sans-serif;font-size:25px;letter-spacing:1px;white-space:nowrap}
+.topbar nav button{font-size:16px;letter-spacing:.3px;padding:10px 12px}.topbar .primary{font-size:16px}.user-name{font-size:16px}.user-name small{font-size:13px}
+.fine,.muted{font-size:14px}.page-title p{font-size:16px}.field>:is(span,label){font-size:14px}
+#explore>.section-heading h1{font-size:22px}
+#explore .catalog-results>search>.filters{grid-template-columns:.9fr .9fr 1.2fr 2.25fr 1.05fr .8fr;padding:10px}
+#explore .catalog-results>search>.filters .field{padding:0 12px}
+#explore .catalog-results>search>.filters .field>:is(span,label){font-size:14px;letter-spacing:0}
+#explore .catalog-results>search>.filters select,#explore .catalog-results>search>.filters input,#explore .catalog-results>search>.filters .tag-trigger{font-size:16px;min-height:34px;height:34px}
+#explore .catalog-results>search>.filters .date-range input{font-size:14px;letter-spacing:-.3px}
+#explore .catalog-results>search>.filters .search-submit{font-size:17px;min-height:50px;margin-left:10px;gap:10px}
+.filter-meta,#explore .clear-filters{font-size:14px}.filter-meta{padding-top:10px;padding-bottom:14px}
+#search-results{scroll-margin-top:84px;outline:none}.map-mode-bar b{font-size:20px}.map-mode-bar .fine{font-size:15px}.map-mode-bar .tabs button{font-size:16px;min-height:44px;padding:9px 20px}
+.map-search-layout{grid-template-columns:350px minmax(0,1fr);height:610px}
+.map-cinema-list b{font-size:19px}.map-cinema-list small,.map-cinema-list p,.map-cinema-list button{font-size:15px}.map-cinema-list button{min-height:38px}.map-cinema-list input,.cinema-choice input{width:21px;height:21px}
+.map-panel{height:100%;min-width:0;min-height:0;display:flex;flex-direction:column;background:#fffefa}
+.map-panel .map-wrap{height:auto;flex:1;min-height:0}
+.map-legend{display:flex;align-items:center;flex-wrap:wrap;gap:8px 17px;padding:12px 16px 5px;border-top:1px solid #d9cfbd;font-size:14px;color:#173d33}
+.map-legend>span{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}.map-legend i{width:12px;height:12px;border-radius:50%;display:inline-block}.legend-selected{margin-left:auto;font-weight:600}
+.map-help{font-size:14px;color:#647066;margin:0;padding:4px 16px 10px}.mobile-map-help{display:none}
+#explore .map-select-area{font-size:15px;min-height:44px}.map-popup strong{font-size:19px}.map-popup p{font-size:15px}.map-popup button{font-size:16px;min-height:44px}.leaflet-popup-content{min-width:230px;margin:16px 20px}.leaflet-popup-content-wrapper .leaflet-popup-close-button{font-size:24px;width:30px;height:30px}
+.cinema-pin-host svg{display:block;filter:drop-shadow(0 2px 3px #0004)}.cinema-pin-host.is-chosen{z-index:1000!important}.cinema-pin-host:focus-visible{outline:3px solid #173d33;outline-offset:4px;border-radius:50%}
+#explore .cinema-list button>b{font-size:19px}#explore .cinema-list button>span,#explore .cinema-list small{font-size:14px}.cinema-choice-check{font-size:14px;min-height:44px}
+#explore .cinema-heading h2{font-size:27px}#explore .cinema-heading p{font-size:16px}#explore .hall-card h3{font-size:21px}#explore .screen-type{font-size:14px}#explore .hall-price small,#explore .hall-buy small{font-size:14px}#explore .hall-card>.primary{font-size:16px;min-height:46px}
+.selection-dock>strong{font-size:17px}#explore .selection-chips button{font-size:14px;min-height:40px}.selection-dock .primary{font-size:16px;min-height:46px}.dock-clear{font-size:14px}.selection-dock{gap:12px}
+.selected-tags button,#explore .selected-tags button,.tag-categories button,.tag-option small{font-size:14px}.tag-trigger,.tag-option span{font-size:16px}.modal .fine,.modal .muted,.order-card .fine{font-size:14px}.order-summary,.order-actions button,.cart-items p{font-size:15px}.order-summary strong{font-size:23px}.tabs button{font-size:16px}.home-slide-editor .actions button{font-size:15px}
+.site-footer{font-size:14px}.site-footer .brand{font-size:22px;font-family:system-ui,sans-serif;letter-spacing:1px}.site-footer button{font-size:14px}
+table{font-size:15px}th{font-size:14px}.admin-cinema .actions button,.order-actions button{font-size:15px}.order-card .mono{font-size:13px}
+.material-spec{margin:16px 0;padding:16px 18px;border:1px solid #c8cfc7;border-radius:6px;background:#f7f8f3;color:#173d33}.material-spec h3{font-size:17px;margin-bottom:12px}.material-spec dl{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0}.material-spec dt{font-size:14px;color:#647066}.material-spec dd{font-size:16px;font-weight:600;margin:5px 0;overflow-wrap:anywhere}.material-spec .fine{color:#647066;font-size:14px;margin-bottom:0}.spec-pass{color:#216540;font-size:15px;font-weight:600}.spec-fail{color:#aa2637;font-size:15px;font-weight:600}.material-filename{overflow-wrap:anywhere}.material-spec p{line-height:1.7}.order-card .material-spec .fine{color:#647066}
+@media(max-width:650px){.material-spec{padding:14px}.material-spec dl{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:1200px){#explore .catalog-results>search>.filters{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px 0;padding:14px}#explore .catalog-results>search>.filters .field:nth-child(3){border-right:0}#explore .catalog-results>search>.filters .date-field{grid-column:span 2}#explore .catalog-results>search>.filters .field:nth-child(5){border-right:0}#explore .catalog-results>search>.filters .search-submit{grid-column:1/-1;margin:0;min-height:44px}.selection-dock{flex-wrap:wrap}.selection-chips{flex-basis:65%}.selection-dock>.primary{margin-left:auto}.topbar{padding-left:3%;padding-right:3%;gap:12px}.topbar .brand{font-size:23px}}
+@media(max-width:900px){.map-search-layout{grid-template-columns:285px minmax(0,1fr)}.topbar nav button{font-size:15px;padding:8px}.topbar .brand{font-size:21px}.user-name{font-size:14px}}
+@media(max-width:650px){
+  .topbar{padding:12px 4%;gap:10px}.topbar .brand{font-size:20px;letter-spacing:0}.topbar .brand>span{width:32px;height:34px}.topbar .brand>span svg{width:20px}.topbar nav button{font-size:15px;padding:8px 10px}.topbar .primary{font-size:15px;padding:9px 12px}.user-name{font-size:13px}.user-name small{font-size:12px}.account{gap:9px}.topbar>.account .icon{padding:6px}
+  #explore>.section-heading h1{font-size:21px}#explore .catalog-results>search>.filters{grid-template-columns:repeat(2,minmax(0,1fr));padding:14px 8px;gap:14px 0}#explore .catalog-results>search>.filters .field{padding:0 9px}#explore .catalog-results>search>.filters .field:nth-child(2){border-right:0}#explore .catalog-results>search>.filters .field:nth-child(3),#explore .catalog-results>search>.filters .date-field,#explore .catalog-results>search>.filters .field:nth-child(5){grid-column:1/-1;border-right:0}#explore .catalog-results>search>.filters .date-range input{font-size:15px}#explore .catalog-results>search>.filters .search-submit{margin:0 8px;font-size:17px;min-height:46px}
+  #search-results{scroll-margin-top:135px}.map-mode-bar{gap:10px;display:grid;grid-template-columns:minmax(0,1fr)}.map-mode-bar b{font-size:19px}.map-mode-bar .fine{font-size:14px}.map-mode-bar .tabs{justify-self:end}.map-mode-bar .tabs button{font-size:15px;padding:8px 12px}.map-mode-bar>div:first-child{min-width:0}
+  .map-search-layout{height:auto}.map-panel{height:460px;flex-shrink:0;order:1}.map-cinema-list{max-height:300px;order:2}.map-cinema-list b{font-size:18px}.map-legend{font-size:14px;padding:10px 12px 4px;gap:7px 12px}.legend-selected{margin-left:0}.map-help{font-size:13px;padding:4px 12px 9px}.desktop-map-help{display:none}.mobile-map-help{display:inline}.leaflet-popup-content{min-width:180px;max-width:230px;margin:14px}.map-popup strong{font-size:18px}.map-popup p{font-size:14px}#explore .map-select-area{font-size:14px;max-width:70%;top:10px;right:10px;padding:8px 10px}
+  .selection-dock{padding:12px;gap:8px}.selection-dock>strong{font-size:16px}.selection-chips{flex-basis:60%}#explore .selection-chips button{font-size:14px}.selection-dock>.primary{font-size:15px;flex-basis:65%;white-space:normal;line-height:1.4}.dock-clear{font-size:14px}.cinema-choice{min-width:245px}.site-footer{padding-right:130px}
+}
+
+/* Native dialogs retain their closed state and are promoted to the top layer by showModal(). */
+dialog.modal{margin:auto;inline-size:min(740px,calc(100% - 2rem));max-inline-size:calc(100% - 2rem);max-block-size:calc(100dvh - 2rem)}
+dialog.modal:modal{overscroll-behavior:contain}
+dialog.modal::backdrop{background:#000b;backdrop-filter:blur(5px);overflow:hidden;overscroll-behavior:contain}
+dialog.modal.home-preview-modal{inline-size:min(1400px,calc(100% - 2rem));max-inline-size:calc(100% - 2rem)}
+.modal-feedback{padding:12px 16px;margin-block-end:16px;border:1px solid #a72d42;border-radius:6px;background:#ffe2e7;color:#6c0010}
+.modal-feedback p{margin:0 0 8px}
+.field{min-inline-size:0}
+.field>label{line-height:1.5}
+.required-mark{font-size:12px;font-weight:400;margin-inline-start:8px}
+.field-hint,.field-error{font-size:14px;line-height:1.5}
+.field{--field-error:#ffbac7}
+.modal .field,#explore .field{--field-error:#a00020}
+.field-error{visibility:hidden;min-block-size:1.5em;color:var(--field-error)}
+.field-error.is-visible{visibility:visible}
+.field :is(input,select,textarea):user-invalid{border-color:var(--field-error);outline:2px solid var(--field-error);outline-offset:2px}
+.modal :is(input,select,textarea){font-size:max(1rem,1em)}
+.modal :is(input,select,textarea):focus-visible,.modal button:focus-visible{outline:3px solid #173d33;outline-offset:3px}
+.skip-link{position:fixed;inset-block-start:8px;inset-inline-start:8px;z-index:1200;padding:12px 20px;border:2px solid #173d33;border-radius:4px;background:#fff;color:#173d33;transform:translateY(-160%)}
+.skip-link:focus{transform:none}
+#main-heading{scroll-margin-block-start:140px}
+#main-heading:focus-visible{outline:3px solid currentColor;outline-offset:5px}
+.visually-hidden:where(:not(:focus-within,:active)){position:absolute!important;clip-path:inset(50%)!important;overflow:hidden!important;inline-size:1px!important;block-size:1px!important;margin:-1px!important;padding:0!important;border:0!important;white-space:nowrap!important}
+.map-loading{display:grid;place-content:center;color:#173d33;min-block-size:390px}
+@media(pointer:coarse){
+ .modal :is(button,input:not([type=checkbox],[type=radio]),select,textarea){min-block-size:48px}
+ #explore .catalog-results>search>.filters :is(input,select,button){min-block-size:48px;height:auto;font-size:16px}
+ .hero .film-controls button{min-inline-size:36px;min-block-size:36px}
+}

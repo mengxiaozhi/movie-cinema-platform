@@ -1,0 +1,20 @@
+.home-carousel .hero-slide-meta{position:absolute;inset-block-start:12px;inset-inline-start:14px;z-index:3;display:flex;align-items:center;gap:10px;max-inline-size:calc(100% - 28px);padding:7px 11px;border-radius:4px;background:#080a09dd;color:#fffefa;font-size:14px;line-height:1.5;pointer-events:none}
+.hero-slide-meta .hero-category{flex:none;color:#e2c991;border-inline-end:1px solid #ffffff55;padding-inline-end:10px}
+.hero-slide-meta .hero-media-title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hero-film .cinema-scene .screen-video.youtube-screen{min-block-size:200px;min-inline-size:200px;border:0}
+.youtube-screen .youtube-player,.youtube-screen iframe{inline-size:100%;block-size:100%;border:0;display:block}
+.youtube-screen{overflow:hidden}
+.youtube-loading{position:absolute;inset:0;display:grid;place-items:center;padding:16px;background:#080a09;color:#fffefa;font-size:14px;pointer-events:none}
+.youtube-play-hint{position:absolute;inset-inline:8px;inset-block-end:8px;padding:5px 8px;border-radius:3px;background:#080a09e6;color:#fff;font-size:13px;pointer-events:none}
+.hero-film .cinema-scene .screen-video.youtube-fallback{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:16px;color:#fffefa;text-align:center;font-size:14px;line-height:1.6}
+.youtube-fallback p{margin:0}
+.youtube-fallback a{color:#fffefa;text-decoration:underline;text-underline-offset:4px;padding:8px}
+.home-carousel .carousel-dots{max-inline-size:60%;overflow-x:auto;scrollbar-width:thin}
+.home-carousel .carousel-dots button{flex:none}
+@media(max-width:760px){
+  #explore .discovery-stage>.hero.has-youtube,.home-preview.has-youtube{min-block-size:320px;aspect-ratio:auto}
+  .home-carousel.has-youtube .cinema-scene{min-block-size:300px;block-size:100%;aspect-ratio:auto;transform:none}
+  .home-carousel.has-youtube .theater-backdrop{object-fit:fill}
+  .home-carousel.has-youtube .cinema-scene .screen-video.youtube-screen{left:4%;top:18%;width:92%;height:68%;min-block-size:200px;min-inline-size:200px}
+  .home-carousel .hero-slide-meta{inset-block-start:8px;inset-inline-start:10px;max-inline-size:calc(100% - 20px);font-size:13px;padding:6px 9px;gap:8px}
+}

@@ -1,0 +1,21 @@
+Homepage demo video: Big Buck Bunny trailer
+Copyright 2008, Blender Foundation / www.bigbuckbunny.org
+License: Creative Commons Attribution 3.0
+License and attribution instructions: https://peach.blender.org/about/
+Video source: https://media.w3.org/2010/05/bunny/trailer.mp4
+Adaptation: 25-second excerpt starting at 00:08, transcoded to VP9/Opus and H.264/AAC.
+Poster source: https://media.w3.org/2010/05/bunny/poster.png
+
+Corner illustration: supplied by the user, edited with the built-in image_gen tool.
+Instruction: Preserve the original yellow Traditional Chinese text
+「越暗的地方你越亮」, the people, jar, fireflies and composition.
+Remove only the dark background to transparent alpha.
+The previous website caption 「沉浸式觀影場域／讓每一次曝光，都有份量。」
+is removed from the homepage.
+
+Premium theater background: theater-premium.png
+Created with the built-in image_gen tool for this project.
+Prompt: A symmetrical photorealistic premium walnut cinema, warm champagne
+aisle/wall lights, charcoal seats, and a bright alpine lake on a front-facing
+central screen. Wide 2.5:1 composition, clear architectural detail, no people,
+no lettering or UI. The movie excerpt is overlaid inside the central screen.

@@ -1,0 +1,45 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function owner() {
+      return request.auth != null
+        && request.auth.token.email == 'shiaufeng68@gmail.com'
+        && request.auth.token.email_verified == true
+        && request.auth.token.firebase.sign_in_provider == 'google.com';
+    }
+    function slide(s) {
+      return s.keys().hasAll(['id','type','url','title','seconds','enabled'])
+        && s.keys().hasOnly(['id','type','url','title','seconds','enabled','builtin','credit','category'])
+        && s.id is string && s.id.size() > 0 && s.id.size() < 100
+        && s.type in ['image','video','youtube']
+        && s.url is string && s.url.size() <= 2000
+        && (s.url.matches('https://[^ ]+') || s.url.matches('/media/[a-zA-Z0-9._/-]+'))
+        && (s.type != 'youtube' || s.url.matches('https://www[.]youtube[.]com/watch[?]v=[a-zA-Z0-9_-]{11}(&t=[0-9]+s)?'))
+        && s.title is string && s.title.size() > 0 && s.title.size() <= 100
+        && s.seconds is int && s.seconds >= 3 && s.seconds <= 120
+        && s.enabled is bool
+        && (!('builtin' in s) || (s.builtin == true && s.url == '/media/theater-premium.png'))
+        && (!('credit' in s) || (s.credit is string && s.credit.size() <= 200))
+        && (!('category' in s) || s.category in ['電影預告','商業客戶']);
+    }
+    function home() {
+      let d = request.resource.data;
+      let n = d.slides.size();
+      return d.keys().hasOnly(['slides','schemaVersion']) && (!('schemaVersion' in d) || d.schemaVersion == 2)
+        && d.slides is list && n >= 1 && n <= 16
+        && slide(d.slides[0])
+        && (n < 2 || slide(d.slides[1])) && (n < 3 || slide(d.slides[2]))
+        && (n < 4 || slide(d.slides[3])) && (n < 5 || slide(d.slides[4]))
+        && (n < 6 || slide(d.slides[5])) && (n < 7 || slide(d.slides[6]))
+        && (n < 8 || slide(d.slides[7])) && (n < 9 || slide(d.slides[8]))
+        && (n < 10 || slide(d.slides[9])) && (n < 11 || slide(d.slides[10]))
+        && (n < 12 || slide(d.slides[11])) && (n < 13 || slide(d.slides[12]))
+        && (n < 14 || slide(d.slides[13])) && (n < 15 || slide(d.slides[14]))
+        && (n < 16 || slide(d.slides[15]));
+    }
+    match /siteContent/home { allow get: if true; allow create, update: if owner() && home(); }
+    match /siteDrafts/home { allow get: if owner(); allow create, update: if owner() && home(); }
+    // Business workflows remain local; no client access to shared orders or roles.
+    match /{document=**} { allow read, write: if false; }
+  }
+}
